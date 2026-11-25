@@ -4,6 +4,20 @@ All notable changes to `phil/enums-bundle` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.1.3-alpha - 2026-11-25
+
+### Changed
+
+- Requires the latest minor of each dependency (`twig/twig` 3.31, `symfony/translation-contracts` 3.8), and of each
+  development requirement (`doctrine/orm` 3.8, `doctrine/dbal` 4.6, `doctrine/doctrine-bundle` 3.4,
+  `doctrine/persistence` 4.2, …). The `EnumSet` column types enter the type registry that a DBAL configuration
+  provides, which the type provider of each connection falls back to, instead of the static `Type::addType()`, which
+  DBAL 4.6 deprecates.
+
+### Security
+
+- Requires `twig/twig` 3.31.1 or later, which fixes the advisories of its sandbox published on 2026-11-24.
+
 ## 0.1.2-alpha - 2026-11-15
 
 ### Changed
